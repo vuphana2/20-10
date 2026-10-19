@@ -254,10 +254,10 @@ if (galleryButton) {
   galleryButton.addEventListener("click", () => {
     openModal(
       "GÓC KỶ NIỆM",
-      `<p class="small-note">Chỗ để bạn chèn ảnh của mình nè!</p>
+      `<p class="small-note"></p>
        <div class="photo-slot">
          <img
-           src="assets/images/your-photo.jpg"
+           src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NDJ3a2prdnYyNGJqdWVueXhpbnE4dWkxYWcybWJveHd6ejhqZWw3eSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/P8ef3Dkynk0xLx1h1T/giphy.gif"
            alt="Ảnh kỷ niệm"
            onerror="this.hidden = true"
          >
