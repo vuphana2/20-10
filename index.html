@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff8fc" />
+    <title>Pixel 20/10 — Lời chúc dễ thương</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="pixel-sparkles" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Pixel 20/10 trang chủ"
+        ><span class="brand-cat">♡</span> PIXEL 20/10</a
+      >
+      <span class="top-note">một lời chúc nhỏ xíu ♡</span>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">✦ SPECIAL DAY ✦</p>
+          <h1>HAPPY<br /><span>20/10</span></h1>
+          <p class="subtitle">
+            Gửi một chút dễ thương<br />đến người ghé thăm nhé!
+          </p>
+        </div>
+        <div class="nyan-scene">
+          <div class="space-stars" aria-hidden="true">
+            ✦　·　✧　·　✦<br />·　✦　·　✧　·
+          </div>
+          <!-- Nyan Cat GIF nguyên tác; cần Internet để tải ảnh từ nyan.cat -->
+          <img
+            class="nyan-original"
+            src="https://www.nyan.cat/cats/original.gif"
+            alt="Nyan Cat nguyên tác đang bay cùng cầu vồng"
+            onerror="
+              this.hidden = true;
+              document.querySelector('.nyan-fallback').hidden = false;
+            "
+          />
+          <div
+            class="nyan-fallback"
+            hidden
+            aria-label="Nyan Cat thay thế khi không tải được ảnh"
+          >
+            <div class="fallback-rainbow"></div>
+            <div class="fallback-cat"><span>◉‿◉</span></div>
+          </div>
+          <span class="sparkle s1">✦</span><span class="sparkle s2">✧</span
+          ><span class="sparkle s3">♡</span>
+        </div>
+      </section>
+
+      <section class="entry-card">
+        <div class="pixel-cat-guide">
+          <img
+            class="flower-cat"
+            src="https://i.imgflip.com/7c0528.jpg"
+            alt="Meme mèo cầm hoa hồng"
+            onerror="
+              this.hidden = true;
+              document.querySelector('.flower-cat-fallback').hidden = false;
+            "
+          />
+          <div class="flower-cat-fallback" hidden aria-hidden="true">🐱🌹</div>
+          <div class="speech" id="guide-message" aria-live="polite">
+            Hãy nhập tên của bạn
+          </div>
+          <div class="guide-progress">
+            <span class="step-dot active"></span><span class="step-dot"></span
+            ><span class="step-dot"></span>
+          </div>
+        </div>
+        <form id="visitor-form" class="visitor-form">
+          <label for="visitor-name">BẠN TÊN GÌ?</label>
+          <input
+            id="visitor-name"
+            name="name"
+            type="text"
+            maxlength="40"
+            placeholder="Nhập tên của bạn..."
+            autocomplete="given-name"
+            required
+          />
+          <fieldset id="gender-fieldset">
+            <legend>BẠN LÀ...</legend>
+            <div class="gender-options">
+              <label class="gender-choice female-choice">
+                <input type="radio" name="gender" value="female" required />
+                <span>🌸 NỮ</span>
+              </label>
+              <label class="gender-choice male-choice">
+                <input type="radio" name="gender" value="male" required />
+                <span>🩵 NAM</span>
+              </label>
+            </div>
+          </fieldset>
+          <button class="pixel-button main-button" type="submit">
+            MỞ LỜI CHÚC ▶
+          </button>
+          <p class="form-hint" id="form-hint">Nhập tên để bắt đầu nha ✨</p>
+        </form>
+      </section>
+
+      <section class="extras">
+        <button class="extra-card" id="open-gallery" type="button">
+          <span class="extra-icon">▧</span
+          ><span class="extra-title">GÓC KỶ NIỆM</span
+          ><span class="extra-desc">Mở khung ảnh nhỏ xinh</span>
+        </button>
+        <button class="extra-card" id="open-about" type="button">
+          <span class="extra-icon">♡</span
+          ><span class="extra-title">LỜI NHẮN</span
+          ><span class="extra-desc">Một chiếc note dễ thương</span>
+        </button>
+      </section>
+
+      <div class="visitor-counter" aria-live="polite">
+        LƯỢT MỞ TRÊN TRÌNH DUYỆT NÀY: <strong id="visit-count">0</strong>
+      </div>
+      <p class="counter-note">
+        Bộ đếm thử nghiệm trên thiết bị/trình duyệt hiện tại, không phải tổng
+        lượt truy cập toàn website.
+      </p>
+      <footer>MADE WITH ♡ & PIXEL CATS ✦</footer>
+    </main>
+
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+      <section
+        class="modal-card"
+        id="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button
+          class="pixel-button exit-button"
+          id="close-modal"
+          type="button"
+          aria-label="Thoát"
+        >
+          THOÁT ✕
+        </button>
+        <div class="modal-decoration" aria-hidden="true">♡ ✦ 🐈 ✦ ♡</div>
+        <h2 id="modal-title">LỜI CHÚC PIXEL</h2>
+        <div id="modal-content" class="modal-content"></div>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
